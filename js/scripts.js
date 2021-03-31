@@ -16,16 +16,16 @@ elNewPokemonImg.height = 200;
 console.log(elNewPokemonImg)
 
 var elNewPokemonBody = document.createElement('div');
-elNewPokemonBody.classList.add('pokemon__card-body', 'card-body');
+elNewPokemonBody.classList.add('pokemon__card-body', 'text-center', 'card-body');
 
 var elNewPokemonBodyName = document.createElement('h2');
-elNewPokemonName.classList.add('pokemon__name', 'h5', 'card-title');
-elNewPokemonName.textContent = pokemons[0].name;
+elNewPokemonBodyName.classList.add('pokemon__name', 'h5', 'card-title');
+elNewPokemonBodyName.textContent = pokemons[0].name;
 
 var elNewPokemonBodyType = document.createElement('div');
 elNewPokemonBodyType.classList.add('pokemon__type', 'card-text');
-elNewPokemonBodyType.textContent = pokemons[0].type.join(', ');
-
+elNewPokemonBodyType.textContent = pokemons[0].type;
+console.log(elNewPokemonBodyType)
 
 elNewPokemonBody.appendChild(elNewPokemonBodyName);
 elNewPokemonBody.appendChild(elNewPokemonBodyType);
