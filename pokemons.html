@@ -7,16 +7,21 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="bg-light">
 
   <main>
     <div class="container mt-3">
       <h1 class="h3 p-4 text-center text-warning bg-dark">Pokemons</h1>
     </div>
-
+ 
     <div class="container">
-      <ul class="pokemons row list-unstyled">
-        <!-- <li class="pokemon col-md-3">
+      <ul class="pokemons row list-unstyled"></ul>
+    </div>
+  </main>
+
+  <!-- Templates -->
+      <template id="pokemon-card-template">
+        <li class="pokemon col-md-3">
           <div class="pokemon__card card border-0 shadow-sm">
             <img class="pokemon__img card-img-top" src="https://placehold.it/300x200" alt="rasm" width="300" height="200">
             <div class="pokemon__card-body card-body">
@@ -24,10 +29,8 @@
               <div class="pokemon__type card-text">Grass, Electric</div>
             </div>
           </div>
-        </li> -->
-      </ul>
-    </div>
-  </main>
+        </li>
+      </template>
 
 
   <script src="js/jquery.min.js"></script>

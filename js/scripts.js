@@ -1,41 +1,59 @@
 var elPokemons = $_('.pokemons');
 
-var elNewPokemon = document.createElement('li');
-elNewPokemon.classList.add('pokemon', 'col-md-3');
+var createElementPokemon = function(pokemon) {
 
-var elNewPokemonBox = document.createElement('div');
-elNewPokemonBox.classList.add('pokemon__card', 'card', 'border-0', 'shadow-sm');
+    var createElementPokemon = $_('#pokemon-card-template').content;
 
-var elNewPokemonImg = document.createElement('img');
-elNewPokemonImg.classList.add('pokemon__img', 'card-img-top');
-elNewPokemonImg.src = pokemons[0].img;
-elNewPokemonImg.alt = pokemons[0].name;
-elNewPokemonImg.width = 300;
-elNewPokemonImg.height = 200;
+        var elNewPokemon = elPokemon
 
-console.log(elNewPokemonImg)
+    return elNewPokemon;
+    
+    // var elNewPokemon = createElementFunc('li', 'pokemon col-md-3');
 
-var elNewPokemonBody = document.createElement('div');
-elNewPokemonBody.classList.add('pokemon__card-body', 'text-center', 'card-body');
+    // var elNewPokemonBox = createElementFunc('div', 'pokemon__card card border-0 mb-4 shadow-sm');
+    
+    // var elNewPokemonImg = createElementFunc('img', 'pokemon__img card-img-top');
+    // elNewPokemonImg.src = pokemon.img;
+    // elNewPokemonImg.alt = pokemon.name;
+    // elNewPokemonImg.width = 300;
+    // elNewPokemonImg.height = 200;
+    
+    // var elNewPokemonBody = createElementFunc('div', 'pokemon__card-body text-center card-body');
+    
+    // var elNewPokemonBodyName = createElementFunc('h2', 'pokemon__name h5 card-title', pokemon.name);
+    
+    // var elNewPokemonBodyType = createElementFunc('div', 'pokemon__type', 'card-text', pokemon.type.join(', '));
+    
+    // elNewPokemonBody.appendChild(elNewPokemonBodyName);
+    // elNewPokemonBody.appendChild(elNewPokemonBodyType);
+    
+    // elNewPokemonBox.appendChild(elNewPokemonImg);
+    // elNewPokemonBox.appendChild(elNewPokemonBody);
+    
+    // elNewPokemon.appendChild(elNewPokemonBox);
+    
+    // return elNewPokemon;
 
-var elNewPokemonBodyName = document.createElement('h2');
-elNewPokemonBodyName.classList.add('pokemon__name', 'h5', 'card-title');
-elNewPokemonBodyName.textContent = pokemons[0].name;
+}
 
-var elNewPokemonBodyType = document.createElement('div');
-elNewPokemonBodyType.classList.add('pokemon__type', 'card-text');
-elNewPokemonBodyType.textContent = pokemons[0].type;
-console.log(elNewPokemonBodyType)
+// for (var i = 0; i < pokemons.length; i++) {
+//     elPokemons.appendChild(createElementPokemon(pokemons[i]));
+// }
 
-elNewPokemonBody.appendChild(elNewPokemonBodyName);
-elNewPokemonBody.appendChild(elNewPokemonBodyType);
+var renderPokemons = function(pokemons){
+    var elPokemonsWrapperFragment = document.createDocumentFragment()
 
-elNewPokemonBox.appendChild(elNewPokemonImg);
-elNewPokemonBox.appendChild(elNewPokemonBody);
+    pokemons.forEach(function(pokemon){
+        elPokemonsWrapperFragment.appendChild(createElementPokemon(pokemon));
+    })
+    
+    elPokemons.appendChild(elPokemonsWrapperFragment);
+}
+renderPokemons(pokemons) 
 
-elNewPokemon.appendChild(elNewPokemonBox);
 
-elPokemons.appendChild(elNewPokemon);
+
+
 
 // {/* <li class="pokemon col-md-3 list-unstyled">
 //     <div class="pokemon__card card border-0 shadow-sm">
