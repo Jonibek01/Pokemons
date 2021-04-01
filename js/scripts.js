@@ -1,10 +1,13 @@
 var elPokemons = $_('.pokemons');
+var elPokemonTemplate = $_('#pokemon-card-template').content;
 
 var createElementPokemon = function(pokemon) {
+    var elNewPokemon = elPokemonTemplate.cloneNode(true);
 
-    var createElementPokemon = $_('#pokemon-card-template').content;
-
-        var elNewPokemon = elPokemon
+    elNewPokemon.querySelector('.pokemon__img').src = pokemon.img;
+    elNewPokemon.querySelector('.pokemon__img').alt = pokemon.name;
+    elNewPokemon.querySelector('.pokemon__name').textContent = pokemon.name;
+    elNewPokemon.querySelector('.pokemon__type').textContent = pokemon.type.join(', ');
 
     return elNewPokemon;
     
